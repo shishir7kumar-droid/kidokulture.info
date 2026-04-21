@@ -43,3 +43,7 @@ getkey
 next-env.d.ts
 <your_key_file_name>
 .env
+<your-key-filename>
+getkey
+.env
+node_modules
