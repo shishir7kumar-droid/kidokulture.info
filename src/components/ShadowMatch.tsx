@@ -33,12 +33,12 @@ export const ShadowMatch = () => {
     setShuffledShadows([...ITEMS].sort(() => Math.random() - 0.5));
   }, []);
 
-  const getRelativePos = (e: React.MouseEvent | React.TouchEvent | Touch) => {
+  const getRelativePos = (e: React.MouseEvent | Touch | React.Touch) => {
     if (!containerRef.current) return { x: 0, y: 0 };
     const rect = containerRef.current.getBoundingClientRect();
     return {
-      x: ('clientX' in e ? e.clientX : e.pageX) - rect.left,
-      y: ('clientY' in e ? e.clientY : e.pageY) - rect.top,
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
     };
   };
 
