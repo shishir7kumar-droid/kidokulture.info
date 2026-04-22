@@ -20,14 +20,7 @@ export const Hero = () => {
         transition={{ duration: 0.8 }}
         className="container relative z-10 max-w-5xl"
       >
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-          className="mx-auto mb-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-2 shadow-sm border border-slate-100"
-        >
-          <Sparkles className="h-5 w-5 text-orange-400" />
-          <span className="text-sm font-black text-slate-500 uppercase tracking-widest">Our Story Begins Here</span>
-        </motion.div>
+
         
         <h1 className="mb-8 text-6xl font-black tracking-tight text-slate-800 md:text-8xl leading-[1.1]">
           Where <span className="text-orange-400 italic">Curiosity</span> <br />
