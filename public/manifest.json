@@ -1,0 +1,23 @@
+{
+  "name": "Kidokulture",
+  "short_name": "Kido",
+  "description": "Explore, learn, grow and have fun!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fb923c",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dvgv5h1u1/image/upload/v1776782743/icon_carsx2.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://res.cloudinary.com/dvgv5h1u1/image/upload/v1776782743/icon_carsx2.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

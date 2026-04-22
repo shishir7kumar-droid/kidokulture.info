@@ -1,63 +1,78 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, PlayCircle, GraduationCap, Compass } from 'lucide-react';
+import Link from 'next/link';
 
 export const Hero = () => {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-sky-100 px-4 pt-32 text-center">
+    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-gradient-to-b from-sky-50 to-white px-4 pt-32 text-center">
+      {/* Decorative background shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-60 animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-60 animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-50 rounded-full blur-[120px] opacity-40" />
+      </div>
+
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-        className="container relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="container relative z-10 max-w-5xl"
       >
         <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="mx-auto mb-8 inline-block rounded-3xl bg-emerald-100 p-6 shadow-sm"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          className="mx-auto mb-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-2 shadow-sm border border-slate-100"
         >
-          <Sparkles className="h-16 w-16 text-emerald-600" />
+          <Sparkles className="h-5 w-5 text-orange-400" />
+          <span className="text-sm font-black text-slate-500 uppercase tracking-widest">Our Story Begins Here</span>
         </motion.div>
         
-        <h1 className="mb-6 text-6xl font-black tracking-tight text-slate-800 md:text-8xl">
-          Welcome to <span className="text-orange-400">Kido</span><span className="text-sky-600">Kulture</span>
+        <h1 className="mb-8 text-6xl font-black tracking-tight text-slate-800 md:text-8xl leading-[1.1]">
+          Where <span className="text-orange-400 italic">Curiosity</span> <br />
+          Meets <span className="text-sky-600 underline decoration-sky-200 underline-offset-8">Magic</span>
         </h1>
         
-        <p className="mx-auto mb-10 max-w-3xl text-xl font-bold text-slate-600 md:text-2xl">
-          explore learn grow and have fun..
+        <p className="mx-auto mb-12 max-w-2xl text-xl md:text-2xl font-bold text-slate-600 leading-relaxed">
+          KidoKulture is a safe, interactive universe designed to spark wonder, 
+          encourage exploration, and celebrate the joy of learning through play.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="rounded-3xl bg-orange-400 px-10 py-5 text-2xl font-black text-white shadow-xl shadow-orange-200 transition-colors hover:bg-orange-500"
-          >
-            Get Started
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="rounded-3xl bg-white px-10 py-5 text-2xl font-black text-sky-600 shadow-xl shadow-sky-200 transition-colors hover:bg-slate-50"
-          >
-            View Demo
-          </motion.button>
+        <div className="flex flex-wrap justify-center gap-6 mb-20">
+          <Link href="#explore">
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(251 146 60 / 0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="rounded-full bg-orange-400 px-12 py-6 text-2xl font-black text-white shadow-xl shadow-orange-100 hover:bg-orange-500 transition-all uppercase tracking-wider"
+            >
+              Get Started
+            </motion.button>
+          </Link>
+        </div>
+
+        {/* Floating elements representing our worlds */}
+        <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+           <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-500">
+                 <PlayCircle size={24} />
+              </div>
+           </div>
+           <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-500">
+                 <GraduationCap size={24} />
+              </div>
+           </div>
+           <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-2xl bg-sky-100 flex items-center justify-center text-sky-500">
+                 <Compass size={24} />
+              </div>
+           </div>
         </div>
       </motion.div>
 
-      {/* Decorative Elements */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        className="absolute -top-20 -left-20 h-80 w-80 rounded-full bg-emerald-100 opacity-40 blur-3xl"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-        className="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-orange-100 opacity-40 blur-3xl"
-      />
+      {/* Ground line */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 via-sky-400 to-emerald-400" />
     </section>
   );
 };

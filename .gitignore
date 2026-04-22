@@ -1,4 +1,19 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Security: Never push these
+.env
+.env.local
+*.pem
+id_rsa
+ssh_key
+
+# Dependencies
+node_modules/
+dist/
+build/
+
+# OS/Logs
+.DS_Store
+npm-debug.log*
 
 # dependencies
 /node_modules
