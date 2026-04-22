@@ -60,6 +60,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-black text-slate-400 mb-10 uppercase tracking-widest">
+            <a href="/privacy" className="hover:text-sky-500 transition-colors uppercase">Privacy Policy</a>
             <a href="mailto:01hans.rk@gmail.com" className="hover:text-sky-500 transition-colors lowercase">01hans.rk@gmail.com</a>
             <a href="https://wa.me/917302125050" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors uppercase">WhatsApp: +91 73021 25050</a>
           </div>
